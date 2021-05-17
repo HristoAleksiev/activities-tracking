@@ -36,7 +36,8 @@ nut_user_params = {
 # Preparing a dict with date and time for today's date:
 now = datetime.now()
 today_date_string = now.strftime("%d/%m/%Y")
-today_time = now.strftime("%X")
+time_form = now.time()
+today_time = ((time_form.hour + ((time_form.minute + (time_form.second / 60.0)) / 60.0)) / 24.0)
 
 # Getting the user input in natural language:
 nut_user_input = {
