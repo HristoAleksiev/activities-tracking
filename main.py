@@ -11,11 +11,11 @@ sheety_headers = {
     "Authorization": f"Bearer {SHEETY_BASE64}",
 }
 sheety_params = {"workout": {
-    "Date": "",
-    "Time": "",
-    "Exercise": "",
-    "Duration": "",
-    "Calories": "",
+    "date": "",
+    "time": "",
+    "exercise": "",
+    "duration": "",
+    "calories": "",
 }}
 
 # NutritionIX setup:
@@ -60,12 +60,13 @@ exercise_data = [{
 # Updating params dict with the acquired data from NUT:
 for exercise in exercise_data:
     sheety_params.update({"workout": {
-        "Date": today_date_string,
-        "Time": today_time,
-        "Exercise": exercise["Exercise"],
-        "Duration": exercise["Duration"],
-        "Calories": exercise["Calories"],
+        "date": today_date_string,
+        "time": today_time,
+        "exercise": exercise["Exercise"],
+        "duration": exercise["Duration"],
+        "calories": exercise["Calories"],
     }})
     response = requests.post(url=SHEETY_EXERCISE_ENDPOINT, json=sheety_params, headers=sheety_headers)
     print(response.status_code)
+    print(response.text)
     print(sheety_params)
