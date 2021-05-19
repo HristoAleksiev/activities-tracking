@@ -17,7 +17,6 @@ sheety_params = {"workout": {
     "duration": "",
     "calories": "",
 }}
-
 # NutritionIX setup:
 NUT_APP_ID = os.getenv("NUTRITION_IX_ID")
 NUT_APP_KEY = os.getenv("NUTRITION_IX_KEY")
@@ -32,7 +31,6 @@ nut_user_params = {
     "height_cm": 185.03,
     "age": 27
 }
-
 # Preparing a dict with date and time for today's date:
 now = datetime.now()
 today_date_string = now.strftime("%d/%m/%Y")
